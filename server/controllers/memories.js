@@ -47,21 +47,18 @@ exports.addMemory = async (req, res) => {
 /* Update Memory (Increments Likes by 1) */
 exports.updateMemory = async (req, res) => {
   try {
-    /* Find Memory & store likes in a variable */
-    const memoryLikesAmount = await Memory.findById(req.params.id).select(
-      "likeCount"
+    const { newLikes } = req.body;
+
+    const memory = await Memory.findOneAndUpdate(
+      { _id: req.params.id },
+      { likeCount: newLikes },
+      { new: true }
     );
-    /* Make sure we found the Memory */
-    if (!memoryLikesAmount) {
+    if (!memory) {
       return res
         .status(404)
         .json({ success: false, error: `No memory with id: ${req.params.id}` });
     }
-
-    /* Increment likes and store in memory variable */
-    const memory = await Memory.findByIdAndUpdate(req.params.id, {
-      likeCount: memoryLikesAmount.likeCount + 1,
-    });
 
     return res.status(200).json({ success: true, data: memory });
   } catch (error) {

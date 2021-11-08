@@ -25,31 +25,36 @@ const AppContextProvider = ({ children }) => {
   /* Initial Render Complete */
 
   const addMemory = async (data) => {
+    //Post needs config
     const config = {
       header: {
         "Content-Type": "application/json",
       },
     };
+    // add to db
     const res = await axios.post("/api/v1/memories", data, config);
+    //spread state and add memory to ui
     dispatch({
       type: "ADD_MEMORY",
       payload: res.data.data,
     });
-    console.log(`memories`, memories);
   };
 
-  /*App-Server communication*/
   const likeMemory = async (memory) => {
-    // memory.likeCount++;
-    await axios.patch(`/api/v1/memories/${memory._id}`);
-    // dispatch({
-    //   type: "LIKE_MEMORY",
-    //   payload: memoryLiked.data.data,
-    // });
-    getMemoriesDB();
+    //Increment the like
+    let newLikes = memory.likeCount + 1;
+    //Pass it to axios.patch in req.body
+    const res = await axios.patch(`/api/v1/memories/${memory._id}`, {
+      newLikes,
+    });
+    dispatch({
+      type: "LIKE_MEMORY",
+      payload: res.data.data,
+    });
   };
 
   const deleteMemory = async (memory) => {
+    //Remove memory from DB and filter state
     await axios.delete(`/api/v1/memories/${memory._id}`);
     dispatch({
       type: "DELETE_MEMORY",

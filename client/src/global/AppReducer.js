@@ -8,15 +8,13 @@ export default (state, action) => {
       console.log(`state`, state);
       return [...state, action.payload];
     case "LIKE_MEMORY":
-      // const newMemories = state.map((memory) => {
-      //   if (memory._id === action.payload._id) {
-      //     return action.payload;
-      //   }
-      //   return memory;
-      // });
-
-      // return newMemories;
-      return state;
+      const newMemories = state.map((memory) => {
+        if (memory._id === action.payload._id) {
+          return action.payload;
+        }
+        return memory;
+      });
+      return newMemories;
     case "DELETE_MEMORY":
       return state.filter((memory) => memory._id !== action.payload._id);
     default:
