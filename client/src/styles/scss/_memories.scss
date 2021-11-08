@@ -1,0 +1,77 @@
+.memories-container {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 640px;
+  margin: auto;
+
+  .memory {
+    -webkit-box-shadow: 10px 10px 20px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 20px -12px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 20px -12px rgba(0, 0, 0, 0.75);
+    position: relative;
+    width: 300px;
+    height: 360px;
+    margin: 10px auto;
+    border-radius: 15px;
+    background: inherit;
+
+    background-color: $clr--white;
+    img {
+      object-fit: cover;
+      border-radius: 15px 15px 0 0;
+      width: 100%;
+      height: 160px;
+    }
+
+    &-header {
+      position: absolute;
+      top: 0;
+      padding: 10px 0 0 14px;
+      color: $clr--white;
+      background-color: rgba(0, 0, 0, 0.3);
+      width: 100%;
+      height: 160px;
+      border-radius: 15px 15px 0 0;
+
+      h4 {
+        font-size: 1rem;
+      }
+    }
+    &-info {
+      padding: 8px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      span {
+        color: gray;
+        word-spacing: 2px;
+      }
+      h3 {
+        padding: 15px 0;
+      }
+    }
+    &-btn-container {
+      position: absolute;
+      bottom: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 14px 15px;
+      button {
+        color: $clr--secondary;
+        text-transform: uppercase;
+        background-color: transparent;
+        border: none;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        p {
+          padding: 0 3px;
+        }
+        svg {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

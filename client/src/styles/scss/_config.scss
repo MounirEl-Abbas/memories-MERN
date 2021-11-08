@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+$font-family: "Poppins", sans-serif;
+$clr--white: #fff;
+$header-color: #272727;
+$input-text-border: #ababab;
+$clr--accent: #f37712;
+$clr--secondary: #2d4baa;

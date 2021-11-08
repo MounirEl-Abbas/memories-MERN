@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  background: #d0e4f7;
+  /* Old browsers */
+  /* FF3.6-15 */
+  /* Chrome10-25,Safari5.1-6 */
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(to bottom, #d0e4f7 0%, #89bce5 19%, #539fe1 51%, #87bcea 100%);
+  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7', endColorstr='#87bcea',GradientType=0 );
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 90%;
+  max-width: 1200px;
+  height: 60px;
+  margin: 1.2rem auto;
+  background-color: #fff;
+  color: #272727;
+  border-radius: 20px;
+  box-shadow: 11px 11px 10px -13px rgba(0, 0, 0, 0.75);
+}
+
+header img {
+  width: fit-content;
+  padding-left: 1rem;
+  height: 40px;
+}
+
+form {
+  max-width: 400px;
+  margin: 10px auto;
+}
+
+form .dropdown {
+  position: relative;
+  border: 2px solid #f37712;
+  border-radius: 13px;
+  margin: 0 20px;
+  box-shadow: 11px 11px 10px -13px rgba(0, 0, 0, 0.75);
+}
+
+form .dropdown .open-form-btn {
+  border: 3px solid #f37712;
+  border-radius: 10px;
+  background-color: #f37712;
+  color: #fff;
+  letter-spacing: 2px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  transition: all 0.3s linear;
+}
+
+form .dropdown .open-form-btn h3 {
+  width: 100%;
+}
+
+form .dropdown .open-form-btn svg {
+  font-size: 20px;
+  transition: transform 0.5s linear;
+}
+
+form .dropdown .open-form-btn.isOpen {
+  border-radius: 10px 10px 0 0;
+  letter-spacing: 5px;
+}
+
+form .dropdown .open-form-btn.isOpen svg {
+  transform: rotate(450deg);
+}
+
+form .panel {
+  height: 0;
+  transition: all 0.3s linear;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 0 0 11px 11px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+
+form .panel input,
+form .panel textarea {
+  font-family: "Poppins", sans-serif;
+  padding: 5px;
+  border: 1px solid #ababab;
+  border-radius: 5px;
+}
+
+form .panel textarea {
+  resize: none;
+}
+
+form .panel-show {
+  padding: 10px;
+  height: 400px;
+}
+
+form .panel .btn-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+
+form .panel .btn-container button {
+  margin: 2px 0;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #f37712;
+  border: 3px solid #f37712;
+  padding: 2px;
+}
+
+form .panel .btn-container button[type="submit"] {
+  margin-bottom: 5px;
+  padding: 7px;
+  background-color: #2d4baa;
+  border: 3px solid #2d4baa;
+}
+
+.memories-container {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 640px;
+  margin: auto;
+}
+
+.memories-container .memory {
+  box-shadow: 10px 10px 20px -12px rgba(0, 0, 0, 0.75);
+  position: relative;
+  width: 300px;
+  height: 360px;
+  margin: 10px auto;
+  border-radius: 15px;
+  background: inherit;
+  background-color: #fff;
+}
+
+.memories-container .memory img {
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+  width: 100%;
+  height: 160px;
+}
+
+.memories-container .memory-header {
+  position: absolute;
+  top: 0;
+  padding: 10px 0 0 14px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 160px;
+  border-radius: 15px 15px 0 0;
+}
+
+.memories-container .memory-header h4 {
+  font-size: 1rem;
+}
+
+.memories-container .memory-info {
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.memories-container .memory-info span {
+  color: gray;
+  word-spacing: 2px;
+}
+
+.memories-container .memory-info h3 {
+  padding: 15px 0;
+}
+
+.memories-container .memory-btn-container {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 15px;
+}
+
+.memories-container .memory-btn-container button {
+  color: #2d4baa;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+}
+
+.memories-container .memory-btn-container button p {
+  padding: 0 3px;
+}
+
+.memories-container .memory-btn-container button svg {
+  font-size: 14px;
+}

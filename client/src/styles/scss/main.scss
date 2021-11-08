@@ -1,0 +1,57 @@
+@import "config";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body,
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: $font-family;
+  font-size: 10px;
+
+  background: #d0e4f7; /* Old browsers */
+  /* FF3.6-15 */
+  background: -moz-linear-gradient(
+    top,
+    #d0e4f7 0%,
+    #89bce5 19%,
+    #539fe1 51%,
+    #87bcea 100%
+  );
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-linear-gradient(
+    top,
+    #d0e4f7 0%,
+    #89bce5 19%,
+    #539fe1 51%,
+    #87bcea 100%
+  );
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(
+    to bottom,
+    #d0e4f7 0%,
+    #89bce5 19%,
+    #539fe1 51%,
+    #87bcea 100%
+  );
+  /* IE6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d0e4f7', endColorstr='#87bcea',GradientType=0 );
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+h2 {
+  font-size: 1.6rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+
+@import "header", "form", "memories";
