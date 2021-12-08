@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useReducer } from "react";
-import AppReducer from "./AppReducer";
+import { reducer } from "./AppReducer";
 import axios from "axios";
 
 const AppContext = React.createContext();
 
 const AppContextProvider = ({ children }) => {
-  const [memories, dispatch] = useReducer(AppReducer, []);
+  const [memories, dispatch] = useReducer(reducer, []);
 
   /* 
   On initial Render
