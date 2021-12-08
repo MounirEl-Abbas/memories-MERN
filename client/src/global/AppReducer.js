@@ -1,4 +1,4 @@
-const reducer = (state, action) => {
+export default reducer = (state, action) => {
   switch (action.type) {
     /* Initial Render */
     case "GET_MEMORIES_DB":
@@ -21,4 +21,3 @@ const reducer = (state, action) => {
       return state;
   }
 };
-export default reducer;
