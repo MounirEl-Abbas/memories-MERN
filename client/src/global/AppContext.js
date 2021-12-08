@@ -13,7 +13,9 @@ const AppContextProvider = ({ children }) => {
       >Pass memories array to Memories.js
   */
   const getMemoriesDB = async () => {
-    const allMemories = await axios.get("/api/v1/memories");
+    const allMemories = await axios.get(
+      "https://me-memories-mern.herokuapp.com/api/v1/memories"
+    );
     dispatch({
       type: "GET_MEMORIES_DB",
       payload: allMemories.data.data,
@@ -32,7 +34,11 @@ const AppContextProvider = ({ children }) => {
       },
     };
     // add to db
-    const res = await axios.post("/api/v1/memories", data, config);
+    const res = await axios.post(
+      "https://me-memories-mern.herokuapp.com/api/v1/memories",
+      data,
+      config
+    );
     //spread state and add memory to ui
     dispatch({
       type: "ADD_MEMORY",
@@ -44,9 +50,12 @@ const AppContextProvider = ({ children }) => {
     //Increment the like
     let newLikes = memory.likeCount + 1;
     //Pass it to axios.patch in req.body
-    const res = await axios.patch(`/api/v1/memories/${memory._id}`, {
-      newLikes,
-    });
+    const res = await axios.patch(
+      `https://me-memories-mern.herokuapp.com/api/v1/memories/${memory._id}`,
+      {
+        newLikes,
+      }
+    );
     dispatch({
       type: "LIKE_MEMORY",
       payload: res.data.data,
@@ -55,7 +64,9 @@ const AppContextProvider = ({ children }) => {
 
   const deleteMemory = async (memory) => {
     //Remove memory from DB and filter state
-    await axios.delete(`/api/v1/memories/${memory._id}`);
+    await axios.delete(
+      `https://me-memories-mern.herokuapp.com/api/v1/memories/${memory._id}`
+    );
     dispatch({
       type: "DELETE_MEMORY",
       payload: memory,
