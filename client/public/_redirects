@@ -1,0 +1,2 @@
+/api/* https://me-memories-mern.herokuapp.com/api/v1/memories/:id 200
+/* /index.html 200
