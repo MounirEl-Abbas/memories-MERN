@@ -7,6 +7,8 @@ const Memory = require("../models/Memory");
 
 /* Get All Memories */
 exports.getMemories = async (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+
   try {
     const memories = await Memory.find();
 
