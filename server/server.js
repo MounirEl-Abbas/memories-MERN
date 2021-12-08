@@ -5,7 +5,7 @@ const cors = require("cors");
 require("colors");
 const connectDB = require("./config/db_connect");
 
-dotenv.config({ path: "./config/.env" });
+dotenv.config();
 connectDB();
 
 //Init Express
